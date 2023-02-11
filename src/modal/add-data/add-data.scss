@@ -1,0 +1,29 @@
+@use '/src/style/css/mixin/font.scss';
+@use '/src/style/css/variable/color.scss';
+
+.root {
+  width: 500px;
+  padding: 40px;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 100px auto;
+  align-items: center;
+  margin-bottom: 40px;
+  .label {
+    @include font.font-16-700;
+  }
+  .type {
+    @include font.font-14-500;
+    color: color.$gray-300;
+  }
+}
+
+.footer {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  grid-template-columns: 130px 130px;
+}

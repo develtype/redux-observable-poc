@@ -1,0 +1,63 @@
+@use '/src/style/css/variable/color.scss';
+@use '/src/style/css/mixin/font.scss';
+
+.root {
+  position: absolute;
+  z-index: 90;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(color.$black, 0.7);
+  color: color.$default-black-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  &.alignVModalTop {
+    align-items: start;
+  }
+  &.alignVModalCenter {
+    align-items: center;
+  }
+  &.alignVModalBottom {
+    align-items: end;
+  }
+  &.alignHModalLeft {
+    justify-content: start;
+  }
+  &.alignHModalCenter {
+    justify-content: center;
+  }
+  &.alignHModalRight {
+    justify-content: end;
+  }
+}
+
+.modal {
+  background-color: color.$white;
+  min-width: 300px;
+  min-height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 5px 10px 0 color.$black-300;
+}
+
+.header {
+  height: 60px;
+  border-bottom: solid 1px ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  background-color: color.$secondary-color;
+  color: color.$white;
+  .headerTitle {
+    @include font.font-20-700;
+    margin: 0 auto;
+  }
+}
+
+.closeButton {
+  cursor: pointer;
+}

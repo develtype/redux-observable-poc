@@ -5,9 +5,20 @@
   grid-template-columns: 200px 1fr;
 }
 
-.list {
+.root {
   margin: 0 auto;
   width: 700px;
+}
+
+.control {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.list {
+  width: 100%;
 }
 
 .head {
