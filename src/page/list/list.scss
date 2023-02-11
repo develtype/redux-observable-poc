@@ -1,0 +1,50 @@
+@use '/src/style/css/variable/color.scss';
+
+@mixin gridRowLayout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+.list {
+  margin: 0 auto;
+  width: 700px;
+}
+
+.head {
+  @include gridRowLayout;
+  background-color: color.$primary-color;
+  color: color.$white-200;
+  height: 40px;
+}
+
+.hCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:not(first-child) {
+    border-right: 1px solid color.$white;
+  }
+}
+
+.body {
+  border-bottom: 1px solid color.$white-100;
+}
+
+.bodyRow {
+  @include gridRowLayout;
+  height: 30px;
+  color: color.$gray-100;
+  cursor: pointer;
+  &:nth-child(even) {
+    background-color: color.$white-100;
+  }
+}
+
+.bCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:not(first-child) {
+    border-right: 1px solid color.$white;
+  }
+}

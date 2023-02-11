@@ -1,3 +1,6 @@
+@use '/src/style/css/variable/color.scss';
+
 .root {
   text-align: center;
+  color: color.$default-black-color;
 }
