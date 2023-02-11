@@ -1,0 +1,51 @@
+@mixin font-family {
+  font-family: sans-serif;
+}
+
+@mixin font-20-700 {
+  @include font-family;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@mixin font-20-500 {
+  @include font-family;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+@mixin font-16-700 {
+  @include font-family;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@mixin font-16-500 {
+  @include font-family;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+@mixin font-15-700 {
+  @include font-family;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+@mixin font-15-500 {
+  @include font-family;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@mixin font-14-700 {
+  @include font-family;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@mixin font-14-500 {
+  @include font-family;
+  font-size: 14px;
+  font-weight: 500;
+}
