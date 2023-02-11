@@ -4,6 +4,6 @@ import styles from './app.scss';
 
 export const App = () => (
   <div className={styles.root}>
-    <h1>Webpack react template!</h1>
+      <h1>Redux-observable middleware with rxjs!</h1>
   </div>
 );
