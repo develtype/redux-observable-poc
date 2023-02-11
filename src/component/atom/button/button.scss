@@ -1,0 +1,71 @@
+@use '/src/style/css/variable/color.scss';
+@use '/src/style/css/mixin/font.scss';
+
+.root {
+  border-radius: 2px;
+  background: color.$default-black-color;
+  border: 1px solid color.$default-black-color;
+  color: color.$white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    opacity: 0.7;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  &.rounded {
+    border-radius: 99px;
+  }
+  &.outlined {
+    border: 1px solid color.$default-black-color;
+    background-color: color.$white;
+    color: color.$default-black-color;
+  }
+}
+
+.smSize {
+  @include font.font-14-500;
+  border-radius: 6px;
+  padding: 0 15px;
+  height: 30px;
+}
+
+.mdSize {
+  @include font.font-15-500;
+  border-radius: 6px;
+  padding: 0 20px;
+  height: 35px;
+}
+
+.lgSize {
+  @include font.font-16-500;
+  border-radius: 6px;
+  padding: 0 25px;
+  height: 40px;
+}
+
+.primary {
+  background-color: color.$primary-color;
+  border: 1px solid color.$primary-color;
+  color: color.$white;
+  &.outlined {
+    border: 1px solid color.$primary-color;
+    background-color: color.$white;
+    color: color.$primary-color;
+  }
+}
+
+.secondary {
+  background-color: color.$secondary-color;
+  border: 1px solid color.$secondary-color;
+  color: color.$white;
+  &.outlined {
+    border: 1px solid color.$secondary-color;
+    background-color: color.$white;
+    color: color.$secondary-color;
+  }
+}
