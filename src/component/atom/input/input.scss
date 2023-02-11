@@ -1,0 +1,48 @@
+@use '/src/style/css/variable/color.scss';
+@use '/src/style/css/mixin/font.scss';
+
+.root {
+  border: 1px solid color.$light-gray-200;
+  color: color.$default-black-color;
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: color.$gray-300
+  }
+  &:disabled {
+    background-color: color.$gray-100;
+    color: color.$white;
+  }
+}
+
+.smSize {
+  @include font.font-14-500;
+  border-radius: 6px;
+  padding: 0 10px;
+  height: 30px;
+}
+
+.mdSize {
+  @include font.font-15-500;
+  border-radius: 6px;
+  padding: 0 12px;
+  height: 35px;
+}
+
+.lgSize {
+  @include font.font-16-500;
+  border-radius: 6px;
+  padding: 0 15px;
+  height: 40px;
+}
+
+.borderBottom {
+  border-radius: 0px;
+  border: 0px solid color.$light-gray-200;
+  border-bottom: 1px solid color.$light-gray-200;
+}
+
+.borderNone {
+  border: 0px solid color.$light-gray-200;
+}
