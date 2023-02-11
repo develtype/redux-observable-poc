@@ -1,0 +1,35 @@
+@use '/src/style/css/variable/color.scss';
+
+.root {
+  margin: 0 auto;
+  width: 400px;
+}
+
+.control {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.info {
+  display: grid;
+  grid-template: 30px 30px / auto 1fr;
+  justify-items: baseline;
+  gap: 10px;
+}
+
+.name {
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  color: color.$dark-gray-300;
+  font-weight: 600;
+}
+
+.item {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  color: color.$gray-100;
+}

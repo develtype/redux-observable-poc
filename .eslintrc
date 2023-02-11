@@ -32,6 +32,7 @@
   ],
   "rules": {
     "@typescript-eslint/explicit-module-boundary-types": "off",
+    "react-hooks/exhaustive-deps": "off",
     "max-lines": "off",
     "max-lines-per-function": "off",
     "complexity": "off",
