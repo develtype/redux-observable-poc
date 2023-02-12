@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { Button } from 'src/component/atom/button/button';
 import { Input } from 'src/component/atom/input/input';
 import { dataAction } from 'src/redux/data/data.action';
@@ -13,6 +14,7 @@ type PropsType = {
 };
 
 export const DetailPage = ({ data }: PropsType) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [editMode, setEditMode] = useState(false);
   const [_data, set_data] = useState(data.data);
@@ -27,6 +29,9 @@ export const DetailPage = ({ data }: PropsType) => {
     }
   }, [dataStatus]);
 
+  function handleListBtnClick() {
+    navigate('/');
+  }
   function handleEditBtnClick() {
     setEditMode(!editMode);
   }
@@ -40,6 +45,9 @@ export const DetailPage = ({ data }: PropsType) => {
     <div className={styles.root}>
       <h2>{`${data.id}'s Detail`}</h2>
       <div className={styles.control}>
+        <Button sizeType='sm' outlined onClick={handleListBtnClick}>
+          List
+        </Button>
         <Button sizeType='sm' outlined={editMode} onClick={handleEditBtnClick}>
           {editMode ? 'CANCEL' : 'EDIT'}
         </Button>
