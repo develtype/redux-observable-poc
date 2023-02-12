@@ -1,6 +1,7 @@
 import 'src/style/css/common.scss';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { SpinnerLoader } from 'src/page/spinner/spinner.loader';
 import { dataAction } from 'src/redux/data/data.action';
 import { dataSelector } from 'src/redux/data/data.state';
 import { AppRoute } from './app.route';
@@ -18,6 +19,7 @@ export const App = () => {
     <div className={styles.root}>
       <h1>Redux-observable middleware with rxjs!</h1>
       {isDatas && <AppRoute />}
+      <SpinnerLoader />
     </div>
   );
 };

@@ -1,0 +1,32 @@
+@use '/src/style/css/variable/color.scss';
+
+.root {
+  position: absolute;
+  z-index: 90;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(color.$black, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.spinner {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border: 6px solid color.$white;
+  border-radius: 40px;
+  border-top-color: color.$primary-color;
+  animation: rotate-anime 1s ease-in-out infinite;
+}
+
+@keyframes rotate-anime {
+  to {
+    transform: rotate(360deg);
+  }
+}
