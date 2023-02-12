@@ -2,6 +2,7 @@ import { Action } from 'redux';
 import { combineEpics, Epic } from 'redux-observable';
 import {
   catchError,
+  EMPTY,
   filter,
   map,
   mergeMap,
@@ -44,6 +45,25 @@ const pendingEndEpic: Epic = (actions$: Observable<Action>) =>
       ].includes(action.type),
     ),
     map(() => dataAction.decreasePendingCount()),
+  );
+
+const pendingFailureNoticeEpic: Epic = (
+  actions$: Observable<{ type: string; payload: { errorMsg?: string } }>,
+) =>
+  actions$.pipe(
+    filter((action) =>
+      [
+        dataAction.fetchDatas.failure.type,
+        dataAction.createData.failure.type,
+        dataAction.deleteData.failure.type,
+        dataAction.updateData.failure.type,
+      ].includes(action.type),
+    ),
+    mergeMap(({ payload }) => {
+      alert(payload.errorMsg);
+
+      return EMPTY;
+    }),
   );
 
 const fetchDatasEpic: Epic = (actions$: Observable<Action>) =>
@@ -128,6 +148,7 @@ const updateDataEpic: Epic = (actions$: Observable<Action>) =>
 export const dataEpic = combineEpics(
   pendingStartEpic,
   pendingEndEpic,
+  pendingFailureNoticeEpic,
   fetchDatasEpic,
   createDataEpic,
   deleteDataEpic,
